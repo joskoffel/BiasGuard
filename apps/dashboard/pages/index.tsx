@@ -1,5 +1,7 @@
 import React from 'react';
 import dynamic from 'next/dynamic';
+import { format } from 'date-fns';
+import { sk } from 'date-fns/locale';
 
 // Dynamically import the ChartLine component because it relies on D3,
 // which should only run on the client side. The `ssr: false` option
@@ -36,7 +38,7 @@ const HomePage: React.FC = () => {
         </div>
         <div className="p-4 border rounded shadow-sm">
           <h2 className="text-xl font-semibold">Posledná aktualizácia</h2>
-          <p className="text-2xl mt-2 font-bold">{new Date().toLocaleDateString('sk-SK')}</p>
+          <p className="text-2xl mt-2 font-bold">{format(new Date(), 'd. M. yyyy', { locale: sk })}</p>
         </div>
       </section>
 

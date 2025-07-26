@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "BiasGuard",
+  "version": "0.1.0",
+  "description": "Measure and visualise media bias on the fly.",
+  "permissions": ["activeTab", "storage"],
+  "host_permissions": ["<all_urls>"],
+  "action": {
+    "default_popup": "popup/index.html",
+    "default_title": "BiasGuard"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["contentScript.js"]
+    }
+  ]
+}

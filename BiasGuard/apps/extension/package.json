@@ -1,0 +1,12 @@
+{
+  "name": "extension",
+  "private": true,
+  "scripts": {
+    "build": "tsc -p tsconfig.json && cp -r src/popup/index.html src/popup/style.css dist/popup",
+    "lint": "eslint src --ext .ts,.tsx",
+    "format": "prettier --write .",
+    "test": "echo 'No tests for the extension'"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}

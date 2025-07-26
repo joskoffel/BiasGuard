@@ -1,0 +1,53 @@
+{
+  "name": "biasguard",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "libs/*"
+  ],
+  "scripts": {
+    // Start the Next.js dashboard in development mode
+    "dev": "next dev apps/dashboard",
+    // Run a production build across the monorepo using Turborepo
+    "build": "turbo run build",
+    // Lint all packages using Turborepo
+    "lint": "turbo run lint",
+    // Format all packages with Prettier using Turborepo
+    "format": "turbo run format",
+    // Run unit tests across the repo
+    "test": "turbo run test"
+  },
+  "dependencies": {
+    "@headlessui/react": "^1.7.16",
+    "@heroicons/react": "^2.0.18",
+    "@tanstack/react-query": "^5.28.4",
+    "axios": "^1.6.7",
+    "clsx": "^2.1.1",
+    "d3": "^7.9.0",
+    "date-fns": "^3.6.0",
+    "lucide-react": "^0.268.0",
+    "next": "13.5.11",
+    "postcss": "^8.4.38",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "tailwindcss": "^3.4.3",
+    "zod": "^3.22.4",
+    "autoprefixer": "^10.4.17"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.0.0",
+    "@testing-library/react": "^14.0.0",
+    "@types/node": "^20.5.1",
+    "@types/react": "^18.2.15",
+    "@types/react-dom": "^18.2.7",
+    "eslint": "^8.57.1",
+    "eslint-config-next": "^13.5.4",
+    "husky": "^9.0.11",
+    "jest": "^29.7.0",
+    "prettier": "^3.0.3",
+    "ts-jest": "^29.1.1",
+    "turbo": "^1.10.13",
+    "typescript": "^5.1.6"
+  }
+}

@@ -1,0 +1,36 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18.x]
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+      - run: npm install
+      # Lint the project
+      - run: npm run lint
+      # Run unit tests if present
+      - run: npm run test --if-present
+      # Build the dashboard
+      - run: npm run build
+      # Deploy to Vercel using the official action. You must define the
+      # corresponding secrets (VERCEL_TOKEN, VERCEL_ORG_ID and
+      # VERCEL_PROJECT_ID) in your repository settings for deployments to
+      # succeed.
+      - uses: vercel/vercel-action@v2
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}

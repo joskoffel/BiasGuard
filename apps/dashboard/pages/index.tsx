@@ -36,7 +36,7 @@ const HomePage: React.FC = () => {
         </div>
         <div className="p-4 border rounded shadow-sm">
           <h2 className="text-xl font-semibold">Posledná aktualizácia</h2>
-          <p className="text-2xl mt-2 font-bold">{new Date().toLocaleDateString()}</p>
+          <p className="text-2xl mt-2 font-bold">{new Date().toLocaleDateString('sk-SK')}</p>
         </div>
       </section>
 

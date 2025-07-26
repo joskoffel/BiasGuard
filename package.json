@@ -3,9 +3,9 @@
   "private": true,
   "version": "0.1.0",
   "scripts": {
-    "dev": "npm run dev -w apps/dashboard",
-    "build": "npm run build -w apps/dashboard",
-    "start": "npm run start -w apps/dashboard",
+    "dev": "next dev apps/dashboard",
+    "build": "next build apps/dashboard",
+    "start": "next start apps/dashboard",
     "lint": "eslint . --ext .js,.ts,.jsx,.tsx",
     "typecheck": "tsc --noEmit",
     "test": "jest --runInBand",

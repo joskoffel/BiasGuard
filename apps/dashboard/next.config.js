@@ -1,10 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Enable strict mode and keep App Router disabled for compatibility with
-  // pages directory
   reactStrictMode: true,
-  // Allow importing SVGs as React components
   webpack(config) {
+    // Inherit the SVG loader from the root config so that SVGs can be imported
+    // as React components when running the dashboard in isolation.
     config.module.rules.push({
       test: /\.svg$/,
       use: ['@svgr/webpack'],

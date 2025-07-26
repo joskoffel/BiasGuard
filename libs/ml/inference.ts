@@ -11,8 +11,8 @@ let classifier: any;
  * Runs bias inference on a piece of text. The returned score ranges from 0
  * to 1, where values above 0.5 represent positive sentiment and values below
  * 0.5 represent negative sentiment. In the context of bias detection this
- * example assumes a binary sentiment model (DistilBERT fine‑tuned on SST‑2) as
- * a stand‑in. Replace the model with a dedicated bias detection model when
+ * example assumes a binary sentiment model (DistilBERT fine‑tuned on SST‑2)
+ * as a stand‑in. Replace the model with a dedicated bias detection model when
  * available.
  *
  * @param text Text to analyse
@@ -24,7 +24,7 @@ export async function inferBias(text: string): Promise<{ score: number }> {
     // time this function is invoked and cached in the `classifier` variable.
     classifier = await pipeline(
       'text-classification',
-      'Xenova/distilbert-base-uncased-finetuned-sst-2-english'
+      'Xenova/distilbert-base-uncased-finetuned-sst-2-english',
     );
   }
   const output = await classifier(text);

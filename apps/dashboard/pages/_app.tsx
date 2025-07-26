@@ -1,6 +1,6 @@
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
-import '../styles/globals.css';
+import '@/styles/globals.css';
 
 /**
  * The custom App component allows us to persist layouts and providers

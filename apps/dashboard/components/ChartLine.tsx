@@ -8,8 +8,8 @@ export interface LineDataPoint {
 
 export interface ChartLineProps {
   /**
-   * Array of data points to render. The `date` field should be a Date instance
-   * and `value` a numeric measurement (e.g. bias score).
+   * Array of data points to render. The `date` field should be a Date
+   * instance and `value` a numeric measurement (e.g. bias score).
    */
   data: LineDataPoint[];
   /** Width of the chart in pixels */
@@ -20,8 +20,8 @@ export interface ChartLineProps {
 
 /**
  * A reusable line chart component built with D3.js. It demonstrates how to
- * integrate D3 in a React component by manipulating the DOM inside
- * a `useEffect` hook. The chart scales and axes are re‑calculated whenever
+ * integrate D3 in a React component by manipulating the DOM inside a
+ * `useEffect` hook. The chart scales and axes are re‑calculated whenever
  * the `data`, `width` or `height` props change.
  */
 const ChartLine: React.FC<ChartLineProps> = ({ data, width, height }) => {
@@ -71,7 +71,7 @@ const ChartLine: React.FC<ChartLineProps> = ({ data, width, height }) => {
         d3
           .axisBottom(x)
           .ticks(5)
-          .tickFormat(d3.timeFormat('%b %d') as unknown as any)
+          .tickFormat(d3.timeFormat('%b %d') as unknown as any),
       );
 
     // Y axis

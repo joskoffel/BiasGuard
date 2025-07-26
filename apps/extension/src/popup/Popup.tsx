@@ -33,7 +33,7 @@ const Popup: React.FC = () => {
           target: { tabId: tab.id },
           func: () => document.body.innerText,
         },
-        (results) => {
+        results => {
           const text = results?.[0]?.result || '';
           // Send message to background service worker to call API
           chrome.runtime.sendMessage(
@@ -57,7 +57,14 @@ const Popup: React.FC = () => {
       <button
         onClick={analysePage}
         disabled={loading}
-        style={{ marginTop: '0.5rem', padding: '0.4rem 0.8rem', borderRadius: '4px', backgroundColor: '#2563eb', color: '#fff', border: 'none' }}
+        style={{
+          marginTop: '0.5rem',
+          padding: '0.4rem 0.8rem',
+          borderRadius: '4px',
+          backgroundColor: '#2563eb',
+          color: '#fff',
+          border: 'none',
+        }}
       >
         {loading ? 'Analyzujem…' : 'Analyzovať zaujatost'}
       </button>

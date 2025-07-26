@@ -1,0 +1,30 @@
+/*
+  Global CSS styles for the BiasGuard dashboard. You can customise these
+  styles or adopt a utility framework like Tailwind CSS. The classes used
+  throughout the example components are generic and can be replaced with
+  your preferred styling solution.
+*/
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Simple dark/light theme support via the `next-themes` provider */
+html[class='dark'] {
+  background-color: #1a1a1a;
+  color: #fafafa;
+}

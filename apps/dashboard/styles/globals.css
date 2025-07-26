@@ -23,7 +23,7 @@ a {
   box-sizing: border-box;
 }
 
-/* Simple dark/light theme support via the `next-themes` provider */
+/* Simple dark/light theme support via a `dark` class on the html element */
 html[class='dark'] {
   background-color: #1a1a1a;
   color: #fafafa;
